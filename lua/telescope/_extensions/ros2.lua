@@ -1,4 +1,4 @@
-local pickers = require "ros.telescope.pickers"
+local pickers = require "ros2.telescope.pickers"
 
 return require "telescope".register_extension {
     exports = {

@@ -1,11 +1,11 @@
-local package = require("ros-nvim.package")
+local package = require("ros2-nvim.package")
 local M = {}
 
 M.search_package = function()
     local package_path = package.get_current_package_path()
     local package_name = package.get_current_package_name()
     if package_path == nil then
-        vim.notify("Not in a ROS package", "error", {title = "Search ROS package"})
+        vim.notify("Not in a ROS2 package", "error", { title = "Search ROS2 package" })
         return
     end
     package_path, _ = string.gsub(package_path, "/home/sv/catkin_ws/src", "~/main")
@@ -20,13 +20,13 @@ end
 M.grep_package = function()
     local package_path = package.get_current_package_path()
     if package_path == nil then
-        vim.notify("Not in a ROS package", "error", {title = "Grep ROS package"})
+        vim.notify("Not in a ROS2 package", "error", { title = "Grep ROS2 package" })
         return
     end
     package_path, _ = string.gsub(package_path, "/home/sv/catkin_ws/src", "~/main")
     require("telescope.builtin").live_grep(
         {
-            search_dirs = {package_path}
+            search_dirs = { package_path }
         }
     )
 end

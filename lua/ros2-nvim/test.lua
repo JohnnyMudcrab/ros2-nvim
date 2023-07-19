@@ -1,5 +1,5 @@
-local package = require("ros-nvim.package")
-local utils = require("ros-nvim.vim-utils")
+local package = require("ros2-nvim.package")
+local utils = require("ros2-nvim.vim-utils")
 
 local M = {}
 

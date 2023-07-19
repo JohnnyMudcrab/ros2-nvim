@@ -1,5 +1,5 @@
-local utils = require("ros-nvim.vim-utils")
-local package = require("ros-nvim.package")
+local utils = require("ros2-nvim.vim-utils")
+local package = require("ros2-nvim.package")
 
 local M = {}
 
@@ -23,7 +23,7 @@ function M.catkin_make_pkg()
     local pkg_name = package.get_current_package_name()
     if pkg_name == nil then
         local path = vim.fn.expand("%:p")
-        vim.notify(path .. " is not part of a ROS package", "error", {title = "catkin_make"})
+        vim.notify(path .. " is not part of a ROS package", "error", { title = "catkin_make" })
         return
     end
     local suffix = " --pkg " .. pkg_name
